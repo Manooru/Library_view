@@ -5,5 +5,94 @@
     android:id="@+id/Leaderboard"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <TableLayout
+        android:id="@+id/tableLeaderboard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="12dp"
+        android:stretchColumns="1,2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/LdBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TableRow>
+            <TextView
+                android:text="ID"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:text="Nazwa użytkownika"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:text="Liczba gier"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="1" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="Obecnie te dane to jest" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="placeholder" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="2" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="Ala" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="98" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="3" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="Krzysztof" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="77" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="4" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="Magdalena" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="150" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="5" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="Słoneczko123" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="200" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="6" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="Ktoś" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="34" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="7" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="Twój przyjaciel" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="63" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="8" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="Osoba" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="81" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="9" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="NK.pl" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="144" />
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:text="10" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="twitter.com" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:text="52" />
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:id="@+id/LdBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powróć do pola z\nwpisywaniem ID"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,19 +18,20 @@
         />
 
     <EditText
-        android:id="@+id/EditID"
+        android:id="@+id/IDusera"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Wpisz tutaj ID..."
         android:padding="12dp"
         android:background="@android:drawable/edit_text"
+        android:inputType="number"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="32dp" />
     <EditText
-        android:id="@+id/Nickname"
+        android:id="@+id/Nazwausera"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Wpisz tutaj Twoją nazwę..."
@@ -38,7 +39,25 @@
         android:background="@android:drawable/edit_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/EditID"
+        app:layout_constraintBottom_toTopOf="@id/IDusera"
         android:layout_marginHorizontal="32dp"
         android:layout_marginBottom="16dp" />
+    <Button
+        android:id="@+id/Sprawdzenie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sprawdź ilość gier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/Leaderboard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp" />
+    <Button
+        android:id="@+id/Leaderboard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Leaderboard"
+        app:layout_constraintStart_toEndOf="@id/Sprawdzenie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
