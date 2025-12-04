@@ -14,11 +14,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val button = findViewById<Button>(R.id.button)
         val button2 = findViewById<Button>(R.id.button2)
-        button.setOnClickListener { //moving to activity id
+        button.setOnClickListener {
             val intent = Intent(this, IDActivity::class.java)
             startActivity(intent)
         }
-        button2.setOnClickListener { //closing app
+        button2.setOnClickListener {
             finishAffinity()
             finish()
             ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

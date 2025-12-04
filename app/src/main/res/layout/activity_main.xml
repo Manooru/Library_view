@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <TextView
         android:id="@+id/Welcome"
         android:layout_width="wrap_content"
@@ -17,7 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="20sp"
     />
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -28,7 +26,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
     />
-
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
@@ -39,5 +36,4 @@
         app:layout_constraintTop_toTopOf="@id/button"
         app:layout_constraintBottom_toBottomOf="parent"
         />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

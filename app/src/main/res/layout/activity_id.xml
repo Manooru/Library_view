@@ -14,9 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/IDText"
         android:textSize="20sp"
-
         />
-
     <EditText
         android:id="@+id/IDusera"
         android:layout_width="0dp"

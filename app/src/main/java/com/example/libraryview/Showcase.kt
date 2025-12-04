@@ -25,5 +25,47 @@ class Showcase : AppCompatActivity() {
         }
         findViewById<TextView>(R.id.ShNazwa).text = nazwa
         findViewById<TextView>(R.id.ShNazwa).text = "Twoja ilość gier: $iDusera"
+        nickname = intent.getStringExtra("nickname") ?: ""
+        userId = intent.getIntExtra("user_id", -1)
+        SteamService.api.resolveVanityURL(
+            BuildConfig.STEAM_API_KEY,
+            nickname
+        ).enqueue(object : Callback<VanityResponse> {
+            override fun onResponse(
+                call: Call<VanityResponse>,
+                response: Response<VanityResponse>
+            ) {
+                val steamId64 = response.body()?.response?.steamid
+                if (steamId64 == null) {
+                    startActivity(Intent(this@ShowcaseActivity, ErrorActivity::class.java))
+                    return
+                }
+                loadGameCount(steamId64)
+            }
+            override fun onFailure(call: Call<VanityResponse>, t: Throwable) {
+                startActivity(Intent(this@ShowcaseActivity, ErrorActivity::class.java))
+            }
+        })
+        }
+        private fun loadGameCount(steamId: String) {
+            SteamService.api.getOwnedGames(
+                BuildConfig.STEAM_API_KEY,
+                steamId
+            ).enqueue(object : Callback<OwnedGamesResponse> {
+                override fun onResponse(
+                    call: Call<OwnedGamesResponse>,
+                    response: Response<OwnedGamesResponse>
+                ) {
+                    val gameCount = response.body()?.response?.game_count ?: 0
+
+                    findViewById<TextView>(R.id.txtGameCount).text =
+                        "Gier w bibliotece: $gameCount"
+                }
+
+                override fun onFailure(call: Call<OwnedGamesResponse>, t: Throwable) {
+                    startActivity(Intent(this@ShowcaseActivity, ErrorActivity::class.java))
+                }
+            })
+        }
         }
     }
