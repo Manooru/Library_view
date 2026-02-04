@@ -5,16 +5,19 @@
     android:id="@+id/IDActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <TextView
+        android:id="@+id/IDText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:text="     Wpisz ID steama,\nalbo otwórz leaderboard"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/IDText"
         android:textSize="20sp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/IDusera"
         android:layout_width="0dp"
@@ -40,22 +43,26 @@
         app:layout_constraintBottom_toTopOf="@id/IDusera"
         android:layout_marginHorizontal="32dp"
         android:layout_marginBottom="16dp" />
-    <Button
-        android:id="@+id/Sprawdzenie"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Sprawdź ilość gier"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Leaderboard"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="16dp" />
+
     <Button
         android:id="@+id/Leaderboard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="84dp"
         android:text="Leaderboard"
-        app:layout_constraintStart_toEndOf="@id/Sprawdzenie"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/Sprawdzenie" />
+
+    <Button
+        android:id="@+id/Sprawdzenie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="84dp"
+        android:text="Sprawdź ilość gier"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/Leaderboard"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
