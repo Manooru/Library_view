@@ -27,7 +27,8 @@ class Showcase : AppCompatActivity() {
         findViewById<TextView>(R.id.ShGry).text = "Twoja ilość gier: $nazwa"
 
     }
-    private fun loadOwnedGames(steamId: String) {
+    //to fix ASAP
+    /*private fun loadOwnedGames(steamId: String) {
 
         RetrofitInstance.api.getOwnedGames(
             BuildConfig.STEAM_API_KEY,
@@ -52,5 +53,5 @@ class Showcase : AppCompatActivity() {
                 showError()
             }
         })
-    }
+    }*/
 }
