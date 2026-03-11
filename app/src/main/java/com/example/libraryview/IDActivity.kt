@@ -26,7 +26,7 @@ class IDActivity : AppCompatActivity() {
                 startActivity(Intent(this, Error::class.java))
                 return@setOnClickListener
             }
-            val idValue = idText.toIntOrNull()
+            val idValue = idText
             if (idValue == null) {
                 startActivity(Intent(this, Error::class.java))
                 return@setOnClickListener

@@ -5,14 +5,40 @@ import android.os.Bundle;
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Showcase : AppCompatActivity() {
-
+    private fun loadOwnedGames(steamId: String) {
+        var api="7E287B7DCB4DD30BF79629F7051AC613"
+        var nazwa = intent.getStringExtra("nazwa")
+        var iDusera: String? = intent.getStringExtra("iDusera",)
+        RetrofitInstance.api.getOwnedGames(
+            apiKey = api,
+            steamId = iDusera,
+            includeFreeGames = true
+        ).enqueue(object : Callback<OwnedGamesResponse> {
+            override fun onResponse(
+                call: Call<OwnedGamesResponse>,
+                response: Response<OwnedGamesResponse>
+            ) {
+                if (!response.isSuccessful) {
+                    Error()
+                    return
+                }
+                val games = response.body()?.response?.games ?: emptyList()
+                findViewById<TextView>(R.id.ShGry).text = "Twoja ilość gier: $games"
+            }
+            override fun onFailure(call: Call<OwnedGamesResponse>, t: Throwable) {
+                Error()
+            }
+        })
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_showcase)
         var nazwa = intent.getStringExtra("nazwa")
-        var iDusera = intent.getIntExtra("iDusera", -1)
         val Shwrocenie = findViewById<Button>(R.id.ShBack)
         val Shleaderboard = findViewById<Button>(R.id.ShLeaderboard)
         Shleaderboard.setOnClickListener {
@@ -24,34 +50,8 @@ class Showcase : AppCompatActivity() {
             startActivity(intent)
         }
         findViewById<TextView>(R.id.ShNazwa).text = nazwa
-        findViewById<TextView>(R.id.ShGry).text = "Twoja ilość gier: $nazwa"
+
 
     }
-    //to fix ASAP
-    /*private fun loadOwnedGames(steamId: String) {
 
-        RetrofitInstance.api.getOwnedGames(
-            BuildConfig.STEAM_API_KEY,
-            steamId
-        ).enqueue(object : Callback<OwnedGamesResponse> {
-
-            override fun onResponse(
-                call: Call<OwnedGamesResponse>,
-                response: Response<OwnedGamesResponse>
-            ) {
-                if (!response.isSuccessful) {
-                    showError()
-                    return
-                }
-
-                val games = response.body()?.response?.games ?: emptyList()
-
-                showGames(games)
-            }
-
-            override fun onFailure(call: Call<OwnedGamesResponse>, t: Throwable) {
-                showError()
-            }
-        })
-    }*/
 }

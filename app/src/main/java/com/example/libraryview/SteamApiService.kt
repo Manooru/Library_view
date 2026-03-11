@@ -9,7 +9,7 @@ interface SteamApiService {
     @GET("IPlayerService/GetOwnedGames/v1/")
     fun getOwnedGames(
         @Query("key") apiKey: String,
-        @Query("steamid") steamId: String,
+        @Query("steamid") steamId: String?,
         @Query("include_played_free_games") includeFreeGames: Boolean = true
     ): Call<OwnedGamesResponse>
 }
